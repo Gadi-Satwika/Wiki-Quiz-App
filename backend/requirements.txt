@@ -2,10 +2,13 @@ fastapi
 uvicorn
 gunicorn
 groq
-langchain-groq
 langchain
+langchain-groq
+langchain-community
 langchain-core
 pydantic
 python-dotenv
 sqlalchemy
 psycopg2-binary
+beautifulsoup4
+requests
