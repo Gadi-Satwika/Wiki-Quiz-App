@@ -7,3 +7,4 @@ langchain
 langchain-core
 pydantic
 python-dotenv
+sqlalchemy
