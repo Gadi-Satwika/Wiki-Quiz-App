@@ -12,7 +12,7 @@ app = FastAPI()
 # ENABLE CORS (So your React frontend can talk to this Python backend)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"], # Your React URL
+    allow_origins=["*"], # Your React URL
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE"], # <--- ENSURE DELETE IS HERE
     allow_headers=["*"],
