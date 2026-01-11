@@ -4,9 +4,11 @@ from sqlalchemy.orm import sessionmaker
 import os
 
 # We will store this in a .env file later
-SQLALCHEMY_DATABASE_URL = "postgresql://postgres:password@localhost/wiki_quiz_db"
+SQLALCHEMY_DATABASE_URL = "sqlite:///./quiz.db"
 
-engine = create_engine(SQLALCHEMY_DATABASE_URL)
+engine = create_engine(
+    SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
+)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
