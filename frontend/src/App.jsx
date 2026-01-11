@@ -165,7 +165,10 @@ useEffect(() => {
     setError(null); // Clear previous errors
 
     try {
-      const response = await fetch('http://localhost:8000/generate-quiz', {
+      const API_BASE_URL = "https://wiki-quiz-app-vfx4.onrender.com";
+      console.log(API_BASE_URL)
+      console.log("Hi")
+      const response = await fetch(`${API_BASE_URL}/generate-quiz`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url ,force_refresh: forceRefresh}),

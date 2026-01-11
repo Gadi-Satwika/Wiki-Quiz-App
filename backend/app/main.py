@@ -14,7 +14,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"], # Your React URL
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PUT", "DELETE"], # <--- ENSURE DELETE IS HERE
+    allow_methods=["*"], # <--- ENSURE DELETE IS HERE
     allow_headers=["*"],
 )
 
