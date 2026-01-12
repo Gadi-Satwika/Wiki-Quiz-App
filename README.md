@@ -35,10 +35,13 @@ Backend Setup
    Go to [https://wiki-quiz-app-vfx4.onrender.com]/docs to use the Swagger UI.
    
    Manual Test: Paste a Wikipedia URL (e.g., https://en.wikipedia.org/wiki/SpaceX) into the frontend.
+   
    History Test: Generate a quiz, then switch to the Past Quizzes tab to verify the SQLite persistence.
+   
    Responsive Test: Resize the browser window to verify the stacking behavior of the Navbar and Input cards.
    
    🧠 LangChain Prompt Templates:
+   
    These templates are used to ensure the LLM provides consistent, valid JSON output for the frontend.
    
    1. Quiz Generation Template Plaintext
@@ -57,6 +60,7 @@ Backend Setup
     WIKIPEDIA TEXT: {text}
     "
   2. Related Topics Template Plaintext:
+  
   " IMPORTANT: You must provide 3-5 'related_topics' which are 
     Wikipedia-style subjects related to the text." 
 
@@ -65,5 +69,6 @@ Backend Setup
 2. example_response.json: A saved JSON output from the Llama 3 model showing the raw structure of a generated quiz.
   
 🏁 Final Note:
+
 The backend is hosted on Render's Free Tier, which may spin down after inactivity. 
 Please allow 30-60 seconds for the first quiz to generate while the server wakes up.
