@@ -1,0 +1,156 @@
+1) url = https://en.wikipedia.org/wiki/Alan_Turing
+
+{
+	id:1
+	is_cached: true
+	key_entities: 
+		locations: ['London', 'Bletchley Park', 'Princeton University', 'India', 'Madras Presidency', 'Odisha state', 'Maida Vale', 'Dublin', 'Ballsbridge', 'County Tipperary', 'County Longford', 'County Clare']
+		organizations: ['Government Code and Cypher School', 'National Physical Laboratory', 'University of Manchester', 'Bank of England']
+		people: ['Alan Turing', 'Julius Mathison Turing', 'Ethel Sara Turing', 'Douglas Hofstadter', 'Gordon Brown', 'Queen Elizabeth II']
+		[[Prototype]]: Object
+		quiz_content: Array(12)
+		0: 
+		{
+			question: 'Who is considered the father of theoretical computer science?', options: Array(4), answer: 'Alan Turing', difficulty: 'easy', explanation: 'Alan Turing is widely considered the father of the…ion of the concepts of algorithm and computation.', …
+			}
+		1: {
+			question: 'What was the name of the codebreaking centre where Alan Turing worked during World War II?', options: Array(4), answer: 'Bletchley Park', difficulty: 'easy', explanation: 'Bletchley Park was the codebreaking centre where A…ce that helped the Allies defeat the Axis powers.', …
+			}
+		2: {
+			question: 'What was the name of the machine that Alan Turing worked on at the National Physical Laboratory?', options: Array(4), answer: 'Automatic Computing Engine', difficulty: 'medium', explanation: 'The Automatic Computing Engine was one of the firs… Alan Turing at the National Physical Laboratory.', …
+			}
+		3: {
+			question: 'Why was Alan Turing prosecuted in 1952?', options: Array(4), answer: 'For his homosexual acts', difficulty: 'medium', explanation: 'Alan Turing was prosecuted in 1952 for his homosex…ed hormone treatment as an alternative to prison.', …
+			}
+
+		[[Prototype]]: Array(0)
+		related_topics: Array(5)
+		0: {
+			title: 'Computer Science', 
+			description: 'Learn about the history and development of compute…s of Alan Turing and other pioneers in the field.', 
+			search_query: 'computer science history'}
+		1: {
+			title: 'Cryptography', 
+			description: 'Explore the world of cryptography, including the h… and the development of cryptographic techniques.', 
+			search_query: 'cryptography history'
+			}
+		2: {
+			title: 'LGBTQ+ Rights', 
+			description: 'Learn about the history and development of LGBTQ+ …s of Alan Turing and other pioneers in the field.',
+			search_query: 'lgbtq+ rights history'}
+		3: {
+			title: 'Machine Learning', 
+			description: 'Discover the world of machine learning, including …t of artificial intelligence and neural networks.', 
+			search_query: 'machine learning history'
+			}
+	length: 4
+	[[Prototype]]: Array(0)
+	summary: "Alan Turing was a British mathematician, computer scientist, and logician who made significant contributions to the development of theoretical computer science, cryptography, and artificial intelligence. He is widely considered the father of theoretical computer science and played a crucial role in cracking German ciphers during World War II. Turing's legacy extends beyond his scientific achievements, as he was a pioneer for LGBTQ+ rights and was posthumously pardoned for his conviction under historical legislation."
+	title: "Alan Turing"
+	url: "https://en.wikipedia.org/wiki/Alan_Turing"
+}
+
+2)  url =  https://en.wikipedia.org/wiki/SpaceX
+
+{
+	id: 1
+	key_entities: 
+		locations: ['Starbase, Texas', 'El Segundo, California', 'Mars']
+		organizations: ['SpaceX', 'NASA', 'United States Armed Forces', 'Mars Society', 'TRW', 'Boeing']
+		people: ['Elon Musk', 'Robert Zubrin', 'Jim Cantrell', 'Michael Griffin', 'Gwynne Shotwell', 'Chris Thompson']
+		[[Prototype]]: Object
+	quiz_content: Array(11)
+	0: {
+	question: 'What is the main goal of SpaceX?', 
+	options: Array(4), 
+	answer: 'To decrease the cost and improve the reliability of access to space', 
+	difficulty: 'easy',
+	explanation: 'SpaceX was founded with the vision of decreasing t…travel more accessible and affordable for humans.', …
+	}
+	1: {
+	question: 'What is the name of the first orbital launch vehicle developed by SpaceX?', 
+	options: Array(4),
+	answer: 'Falcon 1', 
+	difficulty: 'medium', 
+	explanation: 'The Falcon 1 was an expendable two-stage-to-orbit … vehicle and was developed with internal funding.', …
+	}
+	2: {
+	question: 'What is the name of the satellite constellation developed by SpaceX?', 
+	options: Array(4), 
+	answer: 'Starlink', 
+	difficulty: 'medium', 
+	explanation: 'The Starlink satellite constellation is a network … internet access to remote and underserved areas.', …
+	}
+	3: {
+	question: 'What is the name of the program developed by SpaceX to land humans on the Moon?',
+	options: Array(4), 
+	answer: 'Artemis', 
+	difficulty: 'hard', 
+	explanation: 'The Artemis program is a NASA program aimed at ret…sed to transport astronauts to the lunar surface.', …
+	}
+	4: {
+	question: 'Who is the CEO of SpaceX?', 
+	options: Array(4), 
+	answer: 'Elon Musk', 
+	difficulty: 'easy', 
+	explanation: "Elon Musk is the founder and CEO of SpaceX. He has…ntal in shaping the company's mission and vision.", …
+	}
+	5: {
+	question: 'What is the name of the reusable launch vehicle developed by SpaceX?', 
+	options: Array(4), 
+	answer: 'Falcon 9', 
+	difficulty: 'medium', 
+	explanation: 'The Falcon 9 is a reusable launch vehicle develope…reusable and has been used for numerous launches.', …
+	}
+	6: {
+	question: 'What is the name of the spacecraft developed by Sp…rt astronauts to the International Space Station?', 
+	options: Array(4), 
+	answer: 'Dragon 2', 
+	difficulty: 'hard', 
+	explanation: 'The Dragon 2 is a spacecraft developed by SpaceX t…reusable and has been used for numerous missions.', …
+	}
+	7: {
+	question: 'What is the name of the program developed by SpaceX to develop a reusable launch vehicle?', 
+	options: Array(4), 
+	answer: 'Starship',
+	difficulty: 'hard',
+	explanation: 'The Starship program is a development program aime…Mars, and other destinations in the solar system.', …
+	}
+	8: {
+	question: "What is the name of the company that provided funding for SpaceX's early development?", 
+	options: Array(4), 
+	answer: 'Private investors', 
+	difficulty: 'easy', 
+	explanation: 'SpaceX was funded by private investors in its earl…nding from investors such as Google and Fidelity.', …
+	}
+	9: {
+	question: 'What is the name of the rocket that was used by SpaceX to launch its first satellite?', 
+	options: Array(4), 
+	answer: 'Falcon 1', 
+	difficulty: 'medium', 
+	explanation: "The Falcon 1 was the first orbital launch vehicle … launch the company's first satellite into orbit.", …
+	}
+	10: {
+	question: 'What is the name of the program developed by SpaceX to develop a human spaceflight program?', 
+	options: Array(4), 
+	answer: 'Polaris', 
+	difficulty: 'hard', 
+	explanation: 'The Polaris program is a development program aimed…Mars, and other destinations in the solar system.', …
+	}
+
+	raw_html: 
+	"b'<!DOCTYPE html>\\n<html class=\"client-nojs vec......
+
+	related_topics: {
+	0: 
+	{
+	title: "SpaceX's Starship program", 
+	description: "Learn more about SpaceX's development of a reusabl…Mars, and other destinations in the solar system.", 
+	search_query: 'SpaceX Starship program'
+	}
+	summary: 
+	"SpaceX is a private American aerospace company founded by Elon Musk in 2002 with a vision of decreasing the costs of space launches and paving the way to a self-sustaining colony on Mars. The company has made numerous advances in rocket propulsion, reusable launch vehicles, human spaceflight, and satellite constellation technology. As of 2025, SpaceX is the world's dominant space launch provider, its launch cadence eclipsing all others, including private competitors and national programs like the Chinese space program."
+	title: "SpaceX"
+	url: "https://en.wikipedia.org/wiki/SpaceX"
+}
+
