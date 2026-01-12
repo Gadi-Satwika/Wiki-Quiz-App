@@ -3,6 +3,7 @@ This project uses LangChain and Llama 3 to parse complex articles and generate s
 
 🔗 Live Deployment
 Frontend (Vercel): [https://wiki-quiz-app-lxa7.vercel.app/]
+
 Backend (Render): [https://wiki-quiz-app-vfx4.onrender.com]
 
 🛠️ Tech StackFrontend: 
@@ -30,7 +31,8 @@ Backend Setup
  - DELETE/quizzes/{id}->Removes a quiz record from the history.
  -
    🧪 Testing StepsDirect API Test: 
-   Go to [Your-Backend-URL]/docs to use the Swagger UI.
+   Go to [https://wiki-quiz-app-vfx4.onrender.com]/docs to use the Swagger UI.
+   
    Manual Test: Paste a Wikipedia URL (e.g., https://en.wikipedia.org/wiki/SpaceX) into the frontend.
    History Test: Generate a quiz, then switch to the Past Quizzes tab to verify the SQLite persistence.
    Responsive Test: Resize the browser window to verify the stacking behavior of the Navbar and Input cards.
@@ -50,6 +52,7 @@ Backend Setup
     5. Suggest search queries for YouTube and Google to help the student learn more.
     
     {format_instructions}
+    
     WIKIPEDIA TEXT: {text}
     "
   2. Related Topics Template Plaintext:
