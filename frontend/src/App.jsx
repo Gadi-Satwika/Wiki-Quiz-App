@@ -95,7 +95,7 @@ const App = () => {
   const deleteQuiz = async (id) => {
     if (window.confirm("Are you sure you want to remove this quiz from your history?")) {
       try {
-        const response = await fetch(`http://localhost:8000/quizzes/${id}`, {
+        const response = await fetch(`https://wiki-quiz-app-vfx4.onrender.com/quizzes/${id}`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
@@ -120,7 +120,7 @@ const App = () => {
   //When user clicks on 'pastQuizzes' tab, the data is fetched from here.
   const fetchHistory = async () => {
     try {
-      const res = await axios.get('http://127.0.0.1:8000/history');
+      const res = await axios.get('https://wiki-quiz-app-vfx4.onrender.com/history');
       setHistory(res.data);
     } catch (err) { console.error("History fetch failed"); }
   };
@@ -144,9 +144,9 @@ const App = () => {
   }, [url]);
 
   // Add this inside your App component
-useEffect(() => {
-  document.body.style.overflow = isModalOpen ? 'hidden' : 'unset';
-}, [isModalOpen]);
+  useEffect(() => {
+    document.body.style.overflow = isModalOpen ? 'hidden' : 'unset';
+  }, [isModalOpen]);
 
   //The main part where the data is actually fetched from the article.
   const handleGenerate = async (forceRefresh = false) => {
@@ -198,11 +198,11 @@ useEffect(() => {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans">
       {/* The navbar that is visible in the output with Generate Button and Past Quizzes Button */}
-      <nav className="bg-white border-b px-8 py-4 flex justify-between items-center sticky top-0 z-50">
+      <nav className="bg-white border-b px-4 sm:px-8 py-4 flex flex-col sm:flex-row justify-between items-center sticky top-0 z-50 gap-4">
         <div className="flex items-center gap-2 text-indigo-600 font-bold text-xl"><BookOpen /> WikiQuiz AI</div>
         <div className="flex gap-4">
-          <button onClick={() => setTab('generate')} className={`px-4 py-2 rounded-lg font-medium ${tab === 'generate' ? 'bg-indigo-600 text-white' : 'text-slate-600 hover:bg-slate-100'}`}>Generate Quiz</button>
-          <button onClick={() => { setTab('history'); fetchHistory(); }} className={`px-4 py-2 rounded-lg font-medium ${tab === 'history' ? 'bg-indigo-600 text-white' : 'text-slate-600 hover:bg-slate-100'}`}>Past Quizzes</button>
+          <button onClick={() => setTab('generate')} className={`flex-1 sm:flex-none px-4 py-2 rounded-lg font-medium ${tab === 'generate' ? 'bg-indigo-600 text-white' : 'text-slate-600 hover:bg-slate-100'}`}>Generate Quiz</button>
+          <button onClick={() => { setTab('history'); fetchHistory(); }} className={`flex-1 sm:flex-none px-4 py-2 rounded-lg font-medium ${tab === 'history' ? 'bg-indigo-600 text-white' : 'text-slate-600 hover:bg-slate-100'}`}>Past Quizzes</button>
         </div>
       </nav>
       {/* The main function */}
@@ -211,10 +211,10 @@ useEffect(() => {
           <div className="space-y-8">
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
               <h2 className="text-2xl font-bold mb-4">Wikipedia Article URL</h2>
-              <div className="flex gap-3">
+              <div className="flex flex-col sm:flex-row gap-4">
                 {/* Url input field is here.. */}
-                <input type="text" value={url} onChange={(e) => setUrl(e.target.value)} placeholder="https://en.wikipedia.org/wiki/..." className="flex-1 border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500" />
-                <button onClick={() => handleGenerate(false)} disabled={loading || !url} className="bg-indigo-600 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 hover:bg-indigo-700 disabled:opacity-50">
+                <input type="text" value={url} onChange={(e) => setUrl(e.target.value)} placeholder="https://en.wikipedia.org/wiki/..." className="flex-1 border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 text-base" />
+                <button onClick={() => handleGenerate(false)} disabled={loading || !url} className="w-full sm:w-auto bg-indigo-600 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 hover:bg-indigo-700 disabled:opacity-50 active:scale-95">
                   {loading ? <Loader2 className="animate-spin" /> : 'Generate'}
                 </button>
               </div>
