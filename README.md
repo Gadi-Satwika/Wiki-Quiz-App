@@ -8,10 +8,15 @@ Frontend (Vercel): [https://wiki-quiz-app-lxa7.vercel.app/]
 Backend (Render): [https://wiki-quiz-app-vfx4.onrender.com]
 
 🛠️ Tech StackFrontend: 
+
 React (Vite), 
+
 Tailwind CSS (Fully Responsive)
+
 Backend: FastAPI (Python), 
+
 SQLAlchemyDatabase: SQLite (Persistent history storage)
+
 AI Orchestration: LangChainLLM: Groq (Llama-3-8b-Preview)
 
 🏗️ Local Setup Instructions
