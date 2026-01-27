@@ -2,7 +2,9 @@ import React, { useState,useEffect } from 'react';
 import axios from 'axios';
 import { BookOpen, History, Loader2, CheckCircle,Trash2 } from 'lucide-react';
 
+// ==========================================
 {/* Question Card that is reusable for printing quiz Cards */}
+// ==========================================
 
 const QuestionCard = ({ q, idx, isQuizMode, quizSubmitted, onSelect, userSelected }) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
@@ -71,6 +73,7 @@ const QuestionCard = ({ q, idx, isQuizMode, quizSubmitted, onSelect, userSelecte
   );
 };
 
+// ==========================================
 const App = () => {
   //Values that are used for entire problem
   const [tab, setTab] = useState('generate');
@@ -125,7 +128,9 @@ const App = () => {
     } catch (err) { console.error("History fetch failed"); }
   };
 
+  // ==========================================
   //Just after entering the url in input field, it extracts the "Article Title" from the url provided.
+  // ==========================================
 
   useEffect(() => {
     const fetchPreview = async () => {
@@ -144,11 +149,14 @@ const App = () => {
   }, [url]);
 
   // Add this inside your App component
+  // ==========================================
   useEffect(() => {
     document.body.style.overflow = isModalOpen ? 'hidden' : 'unset';
   }, [isModalOpen]);
 
+  // ==========================================
   //The main part where the data is actually fetched from the article.
+  // ==========================================
   const handleGenerate = async (forceRefresh = false) => {
     setQuizResult(null); 
     setUserAnswers({}); //clear old answers
@@ -195,6 +203,8 @@ const App = () => {
     }
   };
 
+  // ==========================================
+
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans">
       {/* The navbar that is visible in the output with Generate Button and Past Quizzes Button */}
@@ -205,7 +215,9 @@ const App = () => {
           <button onClick={() => { setTab('history'); fetchHistory(); }} className={`flex-1 sm:flex-none px-4 py-2 rounded-lg font-medium ${tab === 'history' ? 'bg-indigo-600 text-white' : 'text-slate-600 hover:bg-slate-100'}`}>Past Quizzes</button>
         </div>
       </nav>
+      // ==========================================
       {/* The main function */}
+      // ==========================================
       <main className="max-w-5xl mx-auto p-8">
         {tab === 'generate' ? (
           <div className="space-y-8">
@@ -410,7 +422,9 @@ const App = () => {
           </div>
         ) : (
           <div className="bg-white rounded-2xl border shadow-sm overflow-hidden">
+            // ==========================================
             {/*--- TAB-2 --- */}
+            // ==========================================
              {history.length === 0 ? (
                 <div className="text-center py-20 bg-slate-50 rounded-3xl border-2 border-dashed border-slate-200">
                   <History size={48} className="mx-auto text-slate-300 mb-4" />
@@ -462,7 +476,9 @@ const App = () => {
           </div>
         )}
       </main>
+      // ==========================================
       {/* --- SUMMARY AND ENTITIES MODAL --- */}
+      // ==========================================
       {isModalOpen && (
   /* 1. The Overlay: Added overflow-y-auto and changed flex to items-start for long content */
         <div className="fixed inset-0 z-[100] bg-slate-900/40 backdrop-blur-md overflow-y-auto pt-10 pb-10 px-4">     
@@ -522,5 +538,6 @@ const App = () => {
           </div>
         );
       };
+      // ==========================================
 
 export default App;
