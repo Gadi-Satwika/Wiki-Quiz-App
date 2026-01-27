@@ -1,5 +1,4 @@
 # WikiQuiz AI 
-
 Full-Stack Quiz GeneratorAn AI-powered application that transforms Wikipedia knowledge into interactive assessments. 
 This project uses LangChain and Llama 3 to parse complex articles and generate structured multiple-choice quizzes.
 
