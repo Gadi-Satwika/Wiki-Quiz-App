@@ -1,8 +1,9 @@
-# WikiQuiz AI 
+# 🧠 WikiQuiz AI 
+
 Full-Stack Quiz GeneratorAn AI-powered application that transforms Wikipedia knowledge into interactive assessments. 
 This project uses LangChain and Llama 3 to parse complex articles and generate structured multiple-choice quizzes.
 
-### Live Deployment:
+### 🔗 Live Deployment:
 
 Frontend (Vercel): [https://wiki-quiz-app-lxa7.vercel.app/]
 
@@ -10,7 +11,7 @@ Backend (Render): [https://wiki-quiz-app-vfx4.onrender.com]
 
 Demo Video: [https://drive.google.com/file/d/11ehvFJxmeeDsRq2OdiszkCMGqUrjdHQL/view?usp=sharing]
 
-###  Tech StackFrontend: 
+### 🛠️ Tech StackFrontend: 
 
 React (Vite), 
 
@@ -22,7 +23,7 @@ SQLAlchemyDatabase: SQLite (Persistent history storage)
 
 AI Orchestration: LangChainLLM: Groq (Llama-3-8b-Preview)
 
-### Local Setup Instructions
+### 🏗️ Local Setup Instructions
 Backend Setup
 1. Navigate to the directory: cd backend
 2. Install dependencies: pip install -r requirements.txt
@@ -32,14 +33,14 @@ Backend Setup
 6. Install dependencies: npm install
 7. Start the development server: npm run dev
 
- ### API EndpointsMethodEndpoint
+ ### 📡 API EndpointsMethodEndpoint
  - Description
  - POST/generate-quiz -> Scrapes Wiki URL, generates AI quiz, and saves to DB.
  - GET/quizzes->Retrieves all past quizzes from the SQLite database.
  - GET/quizzes/{id}->Fetches detailed questions for a specific past quiz.
  - DELETE/quizzes/{id}->Removes a quiz record from the history.
  -
-### Testing StepsDirect API Test: 
+### 🧪 Testing StepsDirect API Test: 
    Go to [https://wiki-quiz-app-vfx4.onrender.com]/docs to use the Swagger UI.
    
    Manual Test: Paste a Wikipedia URL (e.g., https://en.wikipedia.org/wiki/SpaceX) into the frontend.
@@ -48,7 +49,7 @@ Backend Setup
    
    Responsive Test: Resize the browser window to verify the stacking behavior of the Navbar and Input cards.
    
- ### LangChain Prompt Templates:
+ ### 🧠 LangChain Prompt Templates:
    
    These templates are used to ensure the LLM provides consistent, valid JSON output for the frontend.
    
@@ -69,14 +70,16 @@ Backend Setup
     "
   2. Related Topics Template Plaintext:
   
-  " IMPORTANT: You must provide 3-5 'related_topics' which are 
+  " 
+  
+    IMPORTANT: You must provide 3-5 'related_topics' which are 
     Wikipedia-style subjects related to the text." 
 
-### Sample Data Folder (sample_data/)
+### 📂 Sample Data Folder (sample_data/)
 1. urls.txt: Contains tested URLs like SpaceX.
 2. example_response.json: A saved JSON output from the Llama 3 model showing the raw structure of a generated quiz.
   
-### Final Note:
+### 🏁 Final Note:
 
 The backend is hosted on Render's Free Tier, which may spin down after inactivity. 
 Please allow 30-60 seconds for the first quiz to generate while the server wakes up.
