@@ -421,56 +421,84 @@ const App = () => {
         ) : (
           <div className="bg-white rounded-2xl border shadow-sm overflow-hidden">
             {/*--- TAB-2 --- */}
-             {history.length === 0 ? (
-                <div className="text-center py-20 bg-slate-50 rounded-3xl border-2 border-dashed border-slate-200">
-                  <History size={48} className="mx-auto text-slate-300 mb-4" />
-                  <p className="text-slate-500 font-medium">No past quizzes found. Generate one to get started!</p>
-                </div>
-              ) : (
-                <table className="w-full text-left border-collapse">
-                  {/* ... your table code ... */}
-                  <table className="w-full text-left">
-               <thead className="bg-slate-50 border-b">
-                 <tr><th className="p-4 font-bold">Title</th><th className="p-4 font-bold">Link</th><th className="p-4 font-bold">Action</th></tr>
-               </thead>
-               <tbody>
-                 {history.map((item) => (
-                   <tr key={item.id} className="border-b hover:bg-slate-50">
-                     <td className="p-4 font-medium">{item.title}</td>
-                     <td className="p-4 text-indigo-500 text-sm truncate max-w-xs">{item.url}</td>
-                     <td className="p-4 flex"><button 
-                      onClick={() => { 
-                        setQuizResult(item);
-                        setUrl(item.url);   // Load the old quiz data
-                        setTab('generate');    // Switch to the main view
-                        setIsQuizMode(false);  // Default to Study Mode for history
-                        setQuizSubmitted(false); // Ensure it's not "locked"
-                        setScore(null);        // Clear any old scores
-                        setUserAnswers({});    //Remove user answers
-                        setIsModalOpen(false);   // Clear any old circles
-                      }} 
+<div className="space-y-4">
+  {history.length === 0 ? (
+    <div className="text-center py-20 bg-slate-50 rounded-3xl border-2 border-dashed border-slate-200">
+      <History size={48} className="mx-auto text-slate-300 mb-4" />
+      <p className="text-slate-500 font-medium">No past quizzes found!</p>
+    </div>
+  ) : (
+    <>
+      {/* MOBILE VIEW: Cards (Visible only on small screens) */}
+      <div className="grid grid-cols-1 gap-4 sm:hidden">
+        {history.map((item) => (
+          <div key={item.id} className="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+            <h3 className="font-bold text-slate-800 mb-1">{item.title}</h3>
+            <p className="text-xs text-indigo-500 truncate mb-4">{item.url}</p>
+            <div className="flex justify-between items-center border-t pt-3">
+              <button 
+                onClick={() => {
+                  setSelectedHistoryQuiz(item); // Using the History Modal state we discussed
+                  setShowHistoryModal(true);
+                }}
+                className="text-indigo-600 font-bold text-sm"
+              >
+                View Quiz
+              </button>
+              <button 
+                onClick={() => deleteQuiz(item.id)}
+                className="p-2 text-red-500 bg-red-50 rounded-lg"
+              >
+                <Trash2 size={16} />
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* DESKTOP VIEW: Table (Hidden on mobile) */}
+      <div className="hidden sm:block bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+        <table className="w-full text-left">
+          <thead className="bg-slate-50 border-b text-slate-600">
+            <tr>
+              <th className="p-4 font-bold">Title</th>
+              <th className="p-4 font-bold">Link</th>
+              <th className="p-4 font-bold text-right">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {history.map((item) => (
+              <tr key={item.id} className="border-b hover:bg-slate-50">
+                <td className="p-4 font-medium">{item.title}</td>
+                <td className="p-4 text-indigo-500 text-sm truncate max-w-xs">{item.url}</td>
+                <td className="p-4 text-right">
+                  <div className="flex justify-end items-center gap-3">
+                    <button 
+                      onClick={() => {
+                        setSelectedHistoryQuiz(item);
+                        setShowHistoryModal(true);
+                      }}
                       className="text-indigo-600 font-bold hover:underline"
                     >
                       View Quiz
                     </button>
-                    <div className="h-4 w-[1px] bg-slate-200 ml-3 mt-2"></div>
-                    {/* NEW Individual Delete Button */}
-                      <button 
-                        onClick={() => deleteQuiz(item.id)}
-                        className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-all"
-                        title="Delete from history"
-                      >
-                        <Trash2 size={16} />
-                      </button>
-                    </td>
-                   </tr>
-                 ))}
-               </tbody>
-             </table>
-                </table>
-              )}
-          </div>
-        )}
+                    <div className="h-4 w-[1px] bg-slate-200"></div>
+                    <button 
+                      onClick={() => deleteQuiz(item.id)}
+                      className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg"
+                    >
+                      <Trash2 size={16} />
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
+  )}
+</div>
       </main>
       {/* --- SUMMARY AND ENTITIES MODAL --- */}
       {isModalOpen && (
