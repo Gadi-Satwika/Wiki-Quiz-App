@@ -419,52 +419,56 @@ const App = () => {
             
           </div>
         ) : (
-          <div className="bg-white rounded-2xl border shadow-sm overflow-hidden w-full px-2 sm:px-0">
-            {/*--- TAB-2 --- */}
-              {history.length === 0 ? (
-                <div className="text-center py-20 bg-slate-50 rounded-3xl border-2 border-dashed border-slate-200">
-                  <History size={48} className="mx-auto text-slate-300 mb-4" />
-                  <p className="text-slate-500 font-medium">No past quizzes found!</p>
-                </div>
-              ) : (
-                <div className="space-y-4">
-                  {/* This section replaces the <table> entirely */}
-                  {history.map((item) => (
-                    <div key={item.id} className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4">
-                      {/* Title and URL Stacked Vertically */}
-                      <div className="mb-4">
-                        <h3 className="text-lg font-bold text-slate-800 leading-tight">
-                          {item.title}
-                        </h3>
-                        <p className="text-xs text-indigo-500 break-all mt-1 bg-indigo-50 p-2 rounded-lg">
-                          {item.url}
-                        </p>
-                      </div>
-            
-                      {/* Action Buttons */}
-                      <div className="flex items-center justify-between border-t pt-3 mt-3">
-                        <button 
-                          onClick={() => {
-                            setSelectedHistoryQuiz(item);
-                            setShowHistoryModal(true);
-                          }}
-                          className="flex items-center gap-2 text-indigo-600 font-bold text-sm bg-indigo-50 px-4 py-2 rounded-xl active:scale-95 transition-all"
-                        >
-                          <Eye size={16} /> View Quiz
-                        </button>
-                        
-                        <button 
-                          onClick={() => deleteQuiz(item.id)}
-                          className="p-2 text-red-500 bg-red-50 rounded-xl active:scale-95 transition-all"
-                        >
-                          <Trash2 size={18} />
-                        </button>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
+          {/*--- TAB-2 --- */}
+<div className="w-full max-w-full overflow-x-hidden">
+  {history.length === 0 ? (
+    <div className="text-center py-20 bg-slate-50 rounded-3xl border-2 border-dashed border-slate-200 mx-2">
+      <History size={48} className="mx-auto text-slate-300 mb-4" />
+      <p className="text-slate-500 font-medium px-4">No past quizzes found! Generate one to get started.</p>
+    </div>
+  ) : (
+    <div className="flex flex-col gap-4 px-2 sm:px-0">
+      {history.map((item) => (
+        <div 
+          key={item.id} 
+          className="bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col w-full"
+        >
+          {/* Content Area */}
+          <div className="p-4">
+            <h3 className="text-lg font-bold text-slate-800 break-words leading-tight">
+              {item.title}
+            </h3>
+            <div className="mt-2 p-2 bg-indigo-50 rounded-lg">
+              <p className="text-[10px] sm:text-xs text-indigo-600 break-all leading-relaxed">
+                {item.url}
+              </p>
             </div>
+          </div>
+
+          {/* Action Bar */}
+          <div className="flex items-center justify-between p-4 border-t bg-slate-50/50 rounded-b-2xl">
+            <button 
+              onClick={() => {
+                setSelectedHistoryQuiz(item);
+                setShowHistoryModal(true);
+              }}
+              className="flex-1 mr-4 flex items-center justify-center gap-2 text-indigo-600 font-bold text-sm bg-white border border-indigo-100 py-2.5 rounded-xl active:scale-95 transition-all shadow-sm"
+            >
+              <Eye size={16} /> View Quiz
+            </button>
+            
+            <button 
+              onClick={() => deleteQuiz(item.id)}
+              className="p-2.5 text-red-500 bg-red-50 border border-red-100 rounded-xl active:scale-95 transition-all"
+            >
+              <Trash2 size={18} />
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+  )}
+</div>
       </main>
       {/* --- SUMMARY AND ENTITIES MODAL --- */}
       {isModalOpen && (
