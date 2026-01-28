@@ -419,9 +419,8 @@ const App = () => {
             
           </div>
         ) : (
-          <div className="bg-white rounded-2xl border shadow-sm overflow-hidden">
+          <div className="bg-white rounded-2xl border shadow-sm overflow-hidden w-full px-2 sm:px-0">
             {/*--- TAB-2 --- */}
-            <div className="w-full px-2 sm:px-0">
               {history.length === 0 ? (
                 <div className="text-center py-20 bg-slate-50 rounded-3xl border-2 border-dashed border-slate-200">
                   <History size={48} className="mx-auto text-slate-300 mb-4" />
@@ -466,7 +465,6 @@ const App = () => {
                 </div>
               )}
             </div>
-          </div>
       </main>
       {/* --- SUMMARY AND ENTITIES MODAL --- */}
       {isModalOpen && (
